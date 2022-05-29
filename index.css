@@ -38,4 +38,30 @@ article form {
           flex-direction: column;
   gap: 0.5rem;
 }
+
+.input-form {
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.input-form.active {
+  background-color: #ff00009c;
+  border: none;
+}
+
+.input-form.place::-webkit-input-placeholder {
+  color: black;
+}
+
+.input-form.place:-ms-input-placeholder {
+  color: black;
+}
+
+.input-form.place::-ms-input-placeholder {
+  color: black;
+}
+
+.input-form.place::placeholder {
+  color: black;
+}
 /*# sourceMappingURL=index.css.map */

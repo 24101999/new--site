@@ -17,8 +17,19 @@ $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email');
 $senha = filter_input(INPUT_POST, 'senha');
 
+$val = '';
+
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':senha', $senha);
 
 $stmt->execute();
+
+// if (empty(filter_input(INPUT_POST, 'nome')) || empty(filter_input(INPUT_POST, 'email')) || empty(filter_input(INPUT_POST, 'senha'))) {
+//     $val = 'digite algo';
+//     $nome = 'Este campo esta vazio';
+//     $email = 'Este campo esta vazio';
+//     $senha = 'Este campo esta vazio';
+
+//     header("location:");
+// }

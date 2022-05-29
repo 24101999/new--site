@@ -1,5 +1,12 @@
 <?php
 require_once './controller/forms.php';
+$val = [];
+
+if (count($_POST) > 0) {
+    if (empty(filter_input(INPUT_POST, 'nome')) || empty(filter_input(INPUT_POST, 'email')) || empty(filter_input(INPUT_POST, 'senha'))) {
+        $val = 'Existe campos vasios';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +24,13 @@ require_once './controller/forms.php';
 </head>
 
 <body>
+    <?php if (count($val)) : ?>
+    <ul>
+        <?php foreach ($val as $el) : ?>
+        <li><?php $el ?></li>
+        <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
     <header>
         <nav>
             <h3>home</h3>
@@ -24,18 +38,16 @@ require_once './controller/forms.php';
             <h3>end</h3>
         </nav>
         <article>
-            <form action="controller/forms.php" method="POST">
-                <input class="input-form" type="text" name="nome" placeholder="nome">
-                <input class="input-form" type="email" name="email" placeholder="email">
-                <input class="input-form" type="password" name="senha" placeholder="senha">
+            <form method="POST">
+                <input class="input-form" type="text" name="nome" placeholder="<?= $nome ?>">
+                <input class="input-form" type="email" name="email" placeholder="<?= $email ?>">
+                <input class="input-form" type="password" name="senha" placeholder="<?= $senha ?>">
                 <button class="button" type="submit">Enviar</button>
             </form>
         </article>
     </header>
 
-    <script src="script.js">
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
