@@ -11,25 +11,33 @@ $pass = '';
 
 $conn = new PDO("mysql:host=$host;dbname=$db", $name, $pass);
 
-$stmt = $conn->prepare('INSERT INTO formularios (nome,email,senha) VALUES (:nome , :email, :senha)');
-
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email');
 $senha = filter_input(INPUT_POST, 'senha');
 
-$val = '';
+$imagem = filter_input(INPUT_POST, 'imagem');
 
-$stmt->bindParam(':nome', $nome);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':senha', $senha);
 
-$stmt->execute();
+if ($imagem) {
+    $stmt = $conn->prepare('INSERT INTO imagens (imagem) VALUES (:imagem)');
+    $stmt->bindParam(":imagem", $imagem);
 
-// if (empty(filter_input(INPUT_POST, 'nome')) || empty(filter_input(INPUT_POST, 'email')) || empty(filter_input(INPUT_POST, 'senha'))) {
-//     $val = 'digite algo';
-//     $nome = 'Este campo esta vazio';
-//     $email = 'Este campo esta vazio';
-//     $senha = 'Este campo esta vazio';
+    $stmt->execute();
+}
+$pec = $conn->prepare('SELECT * FROM imagens');
 
-//     header("location:");
-// }
+$pec->execute();
+
+
+$em = $conn->prepare('SELECT * FROM formularios');
+$em->execute();
+
+if ($nome || $email || $senha) {
+
+    $stmt = $conn->prepare('INSERT INTO formularios (nome,email,senha) VALUES (:nome , :email, :senha)');
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha', $senha);
+
+    $stmt->execute();
+}

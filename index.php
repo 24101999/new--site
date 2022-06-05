@@ -1,12 +1,5 @@
 <?php
 require_once './controller/forms.php';
-$val = [];
-
-if (count($_POST) > 0) {
-    if (empty(filter_input(INPUT_POST, 'nome')) || empty(filter_input(INPUT_POST, 'email')) || empty(filter_input(INPUT_POST, 'senha'))) {
-        $val = 'Existe campos vasios';
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,28 +17,37 @@ if (count($_POST) > 0) {
 </head>
 
 <body>
-    <?php if (count($val)) : ?>
-    <ul>
-        <?php foreach ($val as $el) : ?>
-        <li><?php $el ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
     <header>
         <nav>
-            <h3>home</h3>
-            <h3>center</h3>
-            <h3>end</h3>
+            <h1>Henrique dev</h1>
         </nav>
         <article>
-            <form method="POST">
-                <input class="input-form" type="text" name="nome" placeholder="<?= $nome ?>">
-                <input class="input-form" type="email" name="email" placeholder="<?= $email ?>">
-                <input class="input-form" type="password" name="senha" placeholder="<?= $senha ?>">
+            <form method="POST" class="form-header">
+                <input class="input-form" type="text" name="nome" placeholder="Nome" required>
+                <input class="input-form" type="email" name="email" placeholder="Email" required>
+                <div class="ded-input-pass">
+                    <input class="input-form-pass" type="password" name="senha" placeholder="Senha" required>
+                    <div class="block"></div>
+                </div>
                 <button class="button" type="submit">Enviar</button>
             </form>
         </article>
     </header>
+    <form method="POST">
+        <input type="file" name="imagem">
+        <button type="submit"> enviar</button>
+    </form>
+    <?php print_r($em) ?>
+    <p><?= $em[0]->email ?></p>
+
+    <article class="content">
+        <?php foreach ($pec as $value) : ?>
+        <div class="imgs-content">
+            <img src="<?= $value->imagem ?>" alt="">
+        </div>
+        <?php endforeach; ?>
+    </article>
+
 
     <script src="script.js"></script>
 </body>

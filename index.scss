@@ -1,18 +1,40 @@
 body {
     font-family: "Montserrat", sans-serif;
+    margin: 0;
 }
 
 header {
-    background-image: url(imagens/network-3664108_1920.jpg);
+    background-image: url(imagens/coding-g9982edde6_1920.jpg);
     background-repeat: repeat;
     background-position: center;
     height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    input {
+        width: 250px;
+        outline: none;
+    }
+    button {
+        background: #00000078;
+        border-radius: 5px;
+        color: #fff;
+    }
 }
 
 nav {
     display: flex;
     justify-content: center;
     gap: 3rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-transform: uppercase;
 }
 
 article {
@@ -27,14 +49,82 @@ article {
 
 .input-form {
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 2px solid black;
+    background: unset;
+    color: rgb(255, 255, 255);
+}
+
+.input-form::placeholder {
+    color: #000;
 }
 
 .input-form.active {
     background-color: #ff00009c;
-    border: none;
 }
 
 .input-form.place::placeholder {
     color: black;
+}
+
+.input-form-pass {
+    border-radius: 5px;
+    border: 2px solid black;
+    background: unset;
+    color: #fff;
+}
+
+.input-form-pass::placeholder {
+    color: #000;
+}
+
+.ded-input-pass {
+    position: relative;
+    color: #000 !important;
+}
+
+.ded-input-pass::placeholder {
+    color: #000 !important;
+}
+
+.block {
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    background: none;
+    border: 1px solid;
+    top: 3px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.block.active {
+    background-color: #04000091;
+}
+
+.block::placeholder {
+    color: #000 !important;
+}
+
+.input-form-pass.active {
+    background-color: #ff00009c;
+}
+
+.input-form-pass.place::placeholder {
+    color: black;
+}
+
+.content {
+    margin-top: 3rem;
+}
+
+.imgs-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 300px;
+    img {
+        height: 90px;
+        max-width: 100%;
+    }
 }
