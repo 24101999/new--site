@@ -7,6 +7,7 @@ header {
     background-image: url(imagens/coding-g9982edde6_1920.jpg);
     background-repeat: repeat;
     background-position: center;
+    background-size: cover;
     height: 500px;
     position: relative;
     display: flex;
@@ -55,7 +56,7 @@ article {
 }
 
 .input-form::placeholder {
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 
 .input-form.active {
@@ -63,7 +64,7 @@ article {
 }
 
 .input-form.place::placeholder {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .input-form-pass {

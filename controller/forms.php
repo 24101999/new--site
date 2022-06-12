@@ -24,13 +24,18 @@ if ($imagem) {
 
     $stmt->execute();
 }
-$pec = $conn->prepare('SELECT * FROM imagens');
+$stmt = $conn->prepare('SELECT * FROM imagens');
 
-$pec->execute();
+$stmt->execute();
+
+$allimg = $stmt->fetchAll();
 
 
-$em = $conn->prepare('SELECT * FROM formularios');
-$em->execute();
+$stmt = $conn->prepare('SELECT * FROM formularios');
+
+$stmt->execute();
+
+$total = $stmt->fetchAll();
 
 if ($nome || $email || $senha) {
 

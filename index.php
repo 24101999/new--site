@@ -37,17 +37,14 @@ require_once './controller/forms.php';
         <input type="file" name="imagem">
         <button type="submit"> enviar</button>
     </form>
-    <?php print_r($em) ?>
-    <p><?= $em[0]->email ?></p>
-
-    <article class="content">
-        <?php foreach ($pec as $value) : ?>
-        <div class="imgs-content">
-            <img src="<?= $value->imagem ?>" alt="">
-        </div>
+    <!-- <img src="imagens/coding-g9982edde6_1920.jpg" alt=""> -->
+    <article class="imagems">
+        <?php foreach ($allimg as $imgs) : ?>
+        <img src="imagens/<?= $imgs['imagem'] ?>" alt="">
         <?php endforeach; ?>
     </article>
 
+    <p><?= $total[0]['email'] ?></p>
 
     <script src="script.js"></script>
 </body>
