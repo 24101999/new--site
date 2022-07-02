@@ -7,6 +7,7 @@ header {
   background-image: url(imagens/coding-g9982edde6_1920.jpg);
   background-repeat: repeat;
   background-position: center;
+  background-size: cover;
   height: 500px;
   position: relative;
   display: -webkit-box;
@@ -75,19 +76,19 @@ article form {
 }
 
 .input-form::-webkit-input-placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form:-ms-input-placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form::-ms-input-placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form::placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form.active {
@@ -95,19 +96,19 @@ article form {
 }
 
 .input-form.place::-webkit-input-placeholder {
-  color: black;
+  color: white;
 }
 
 .input-form.place:-ms-input-placeholder {
-  color: black;
+  color: white;
 }
 
 .input-form.place::-ms-input-placeholder {
-  color: black;
+  color: white;
 }
 
 .input-form.place::placeholder {
-  color: black;
+  color: white;
 }
 
 .input-form-pass {
@@ -225,5 +226,25 @@ article form {
 .imgs-content img {
   height: 90px;
   max-width: 100%;
+}
+
+.posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.posts h3 {
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=index.css.map */

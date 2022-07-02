@@ -23,29 +23,28 @@ require_once './controller/forms.php';
         </nav>
         <article>
             <form method="POST" class="form-header">
-                <input class="input-form" type="text" name="nome" placeholder="Nome" required>
-                <input class="input-form" type="email" name="email" placeholder="Email" required>
+                <input class="input-form" type="text" name="nome" placeholder="Nome">
+                <input class="input-form" type="email" name="email" placeholder="Email">
                 <div class="ded-input-pass">
-                    <input class="input-form-pass" type="password" name="senha" placeholder="Senha" required>
+                    <input class="input-form-pass" type="password" name="senha" placeholder="Senha">
                     <div class="block"></div>
                 </div>
                 <button class="button" type="submit">Enviar</button>
             </form>
         </article>
     </header>
-    <form method="POST">
-        <input type="file" name="imagem">
-        <button type="submit"> enviar</button>
-    </form>
-    <!-- <img src="imagens/coding-g9982edde6_1920.jpg" alt=""> -->
-    <article class="imagems">
-        <?php foreach ($allimg as $imgs) : ?>
-        <img src="imagens/<?= $imgs['imagem'] ?>" alt="">
-        <?php endforeach; ?>
+
+    <article class="posts">
+        <h3>post</h3>
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            <!-- <input type="text" name="titulo" placeholder="titulo" value="">
+            <input type="text" name="autor" placeholder="autor" value="">
+            <input type="text" name="conteudo" placeholder="conteudo" value=""> -->
+            <input type="file" name="img" value="">
+            <button type="submit" name="send">ENVIAR</button>
+            <p><?= $texto ?></p>
+        </form>
     </article>
-
-    <p><?= $total[0]['email'] ?></p>
-
     <script src="script.js"></script>
 </body>
 
