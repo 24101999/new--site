@@ -61,10 +61,15 @@ article {
 
 .input-form.active {
     background-color: #ff00009c;
+    color: #fff;
 }
 
 .input-form.place::placeholder {
     color: rgb(255, 255, 255);
+}
+
+.input-form-pass.active::placeholder {
+    color: #fff;
 }
 
 .input-form-pass {
@@ -75,7 +80,7 @@ article {
 }
 
 .input-form-pass::placeholder {
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 
 .ded-input-pass {
@@ -84,7 +89,7 @@ article {
 }
 
 .ded-input-pass::placeholder {
-    color: #000 !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .block {

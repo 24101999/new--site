@@ -93,6 +93,7 @@ article form {
 
 .input-form.active {
   background-color: #ff00009c;
+  color: #fff;
 }
 
 .input-form.place::-webkit-input-placeholder {
@@ -111,6 +112,22 @@ article form {
   color: white;
 }
 
+.input-form-pass.active::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.input-form-pass.active:-ms-input-placeholder {
+  color: #fff;
+}
+
+.input-form-pass.active::-ms-input-placeholder {
+  color: #fff;
+}
+
+.input-form-pass.active::placeholder {
+  color: #fff;
+}
+
 .input-form-pass {
   border-radius: 5px;
   border: 2px solid black;
@@ -119,19 +136,19 @@ article form {
 }
 
 .input-form-pass::-webkit-input-placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form-pass:-ms-input-placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form-pass::-ms-input-placeholder {
-  color: #000;
+  color: white;
 }
 
 .input-form-pass::placeholder {
-  color: #000;
+  color: white;
 }
 
 .ded-input-pass {
@@ -140,19 +157,19 @@ article form {
 }
 
 .ded-input-pass::-webkit-input-placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .ded-input-pass:-ms-input-placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .ded-input-pass::-ms-input-placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .ded-input-pass::placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .block {

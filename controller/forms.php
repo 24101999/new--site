@@ -14,6 +14,41 @@ $pass = '';
 
 $conn = new PDO("mysql:host=$host;dbname=$db", $name, $pass);
 
+
+$allimgs = $conn->prepare('SELECT * FROM img');
+
+$allimgs->execute();
+
+$imgs = $allimgs->fetchAll();
+
+
+// $forms = $conn->prepare('SELECT * FROM formularios');
+
+// $forms ->
+
+if (isset($_POST['send'])) {
+    $formatos = array('jpg', 'png', 'svg', 'gif');
+    $extencao = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+
+    if (in_array($extencao, $formatos)) {
+        $pasta = "arquivos/";
+        $temporario = $_FILES['file']['tmp_name'];
+        $newName = uniqid() . ".$extencao";
+        $enviar = $conn->prepare('INSERT INTO img (img) VALUES (:img)');
+
+        $enviar->bindParam(':img', $newName);
+
+        $enviar->execute();
+        if (move_uploaded_file($temporario, $pasta . $newName)) {
+            $msg = 'upload feito com sucesso';
+        } else {
+            $msg = 'erro';
+        }
+    } else {
+        $msg = 'não existe';
+    }
+}
+
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email');
 $senha = filter_input(INPUT_POST, 'senha');
@@ -30,34 +65,5 @@ if ($nome || $email || $senha) {
     $env->execute();
 }
 
-// $titulo = filter_input(INPUT_POST, 'titulo');
-// $autor = filter_input(INPUT_POST, 'autor');
-// $conteudo = filter_input(INPUT_POST, 'conteudo');
 
-// if ($titulo || $autor || $conteudo || $img) {
-//     $post = $conn->prepare('INSERT INTO post (titulo,autor,conteudo,img) VALUES (:titulo ,:autor, :conteudo, :img)
-//     ');
-
-//     $post->bindParam(':titulo', $titulo);
-//     $post->bindParam(':autor', $autor);
-//     $post->bindParam(':conteudo', $conteudo);
-//     $post->bindParam(':img', $img);
-
-//     $post->execute();
-// }
-if (isset($_POST['send'])) {
-    $tipeFiles = ['jpg', 'png', 'svg', 'gif', 'jpeg', 'JPG', 'PNG', 'SVG', 'GIF', 'JPEG'];
-    $extencao = pathinfo($_FILES['img']['name'], PATHINFO_EXTENSION);
-    if (in_array($extencao, $tipeFiles)) {
-        $pasta = "./imagens";
-        $temporario = $_FILES['img']['tmp_name'];
-        $novo_nome = uniqid() . ".$extencao";
-        if (move_uploaded_file($temporario, $pasta . $novo_nome)) {
-            $texto = 'ok';
-        } else {
-            $texto = 'erro';
-        }
-    } else {
-        $texto = 'erro';
-    }
-}
+// $img = pathinfo($_FILES['file']['name'], PATHINFO_FILENAME);

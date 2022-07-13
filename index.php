@@ -11,9 +11,7 @@ require_once './controller/forms.php';
     <link href="index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -34,16 +32,16 @@ require_once './controller/forms.php';
         </article>
     </header>
 
-    <article class="posts">
-        <h3>post</h3>
-        <form action="index.php" method="POST" enctype="multipart/form-data">
-            <!-- <input type="text" name="titulo" placeholder="titulo" value="">
-            <input type="text" name="autor" placeholder="autor" value="">
-            <input type="text" name="conteudo" placeholder="conteudo" value=""> -->
-            <input type="file" name="img" value="">
-            <button type="submit" name="send">ENVIAR</button>
-            <p><?= $texto ?></p>
+    <article>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit" name="send">Enviar</button>
         </form>
+        <h3><?= $msg ?></h3>
+    </article>
+
+    <article class="imgs">
+        <img src="/arquivos/<?= $imgs[0]['img'] ?>" alt="">
     </article>
     <script src="script.js"></script>
 </body>
