@@ -1,5 +1,6 @@
 <?php
-require_once './controller/forms.php';
+require_once './controller/conecsaobanco.php';
+require_once './controller/controllerCadastro.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,15 +23,13 @@ require_once './controller/forms.php';
             <h1>Henrique dev</h1>
         </nav>
         <article>
-            <form method="GET" class="form-header">
-                <input class="input" type="email" name="login" placeholder="Email">
+            <form method="POST" class="form-header">
+                <input class="input" type="email" name="email" placeholder="Email">
                 <div class="ded-input-pass">
-                    <input class="input-form-pass" type="password" name="passs" placeholder="Senha">
+                    <input class="input-form-pass" type="password" name="senha" placeholder="Senha">
                     <div class="block"></div>
                 </div>
-                <a href="<?= $ok ?>" name="enviar" class="button">
-                    <button type="button" name="enviar">Entrar</button>
-                </a>
+                <button class="button" type="submit">Enviar</button>
             </form>
         </article>
     </header>

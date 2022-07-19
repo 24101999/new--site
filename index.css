@@ -3,12 +3,33 @@ body {
   margin: 0;
 }
 
+.body-cadastro {
+  background-image: url("imagens/coding-g9982edde6_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+a button {
+  cursor: pointer;
+  width: 100%;
+}
+
 header {
   background-image: url(imagens/coding-g9982edde6_1920.jpg);
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
-  height: 500px;
+  height: 100vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,6 +114,34 @@ article form {
 
 .input-form.active {
   background-color: #ff00009c;
+  color: #fff !important;
+}
+
+.input {
+  border-radius: 5px;
+  border: 2px solid black;
+  background: unset;
+  color: white;
+}
+
+.input::-webkit-input-placeholder {
+  color: white;
+}
+
+.input:-ms-input-placeholder {
+  color: white;
+}
+
+.input::-ms-input-placeholder {
+  color: white;
+}
+
+.input::placeholder {
+  color: white;
+}
+
+.input.active {
+  background-color: #ff00009c;
   color: #fff;
 }
 
@@ -113,26 +162,26 @@ article form {
 }
 
 .input-form-pass.active::-webkit-input-placeholder {
-  color: #fff;
+  color: #fff !important;
 }
 
 .input-form-pass.active:-ms-input-placeholder {
-  color: #fff;
+  color: #fff !important;
 }
 
 .input-form-pass.active::-ms-input-placeholder {
-  color: #fff;
+  color: #fff !important;
 }
 
 .input-form-pass.active::placeholder {
-  color: #fff;
+  color: #fff !important;
 }
 
 .input-form-pass {
   border-radius: 5px;
   border: 2px solid black;
   background: unset;
-  color: #fff;
+  color: #fff !important;
 }
 
 .input-form-pass::-webkit-input-placeholder {
@@ -153,7 +202,6 @@ article form {
 
 .ded-input-pass {
   position: relative;
-  color: #000 !important;
 }
 
 .ded-input-pass::-webkit-input-placeholder {
@@ -188,19 +236,19 @@ article form {
 }
 
 .block::-webkit-input-placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .block:-ms-input-placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .block::-ms-input-placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .block::placeholder {
-  color: #000 !important;
+  color: white !important;
 }
 
 .input-form-pass.active {
@@ -263,5 +311,24 @@ article form {
 
 .posts h3 {
   text-transform: uppercase;
+}
+
+.file h3 {
+  text-align: center;
+}
+
+.imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.imgs img {
+  height: 300px;
+  width: 300px;
 }
 /*# sourceMappingURL=index.css.map */
