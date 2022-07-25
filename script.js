@@ -5,8 +5,8 @@ const inputFormPass = document.querySelector('.input-form-pass')
 const blockFormInput = document.querySelector('.block')
 const file = document.querySelector('.input-file')
 const send = document.querySelector('.button-send')
-
-
+const carrousel = document.querySelector(".carrousel")
+console.log(carrousel)
 if (send) {
     send.addEventListener('click', (button) => {
         if (file.value == '') {
@@ -14,6 +14,7 @@ if (send) {
         }
     })
 }
+
 
 
 if (button) {
@@ -56,3 +57,6 @@ if (blockFormInput) {
         }
     })
 }
+
+
+carrousel.innerHTML = `<div class="carrousel-block"> <p> proximo </p> <img src="/arquivos/${array[1]['img']}" alt=""> <p> anterior </p> </div> `

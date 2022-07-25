@@ -48,7 +48,7 @@ $passwod = filter_input(INPUT_GET, 'pass');
 $ok = "";
 if (isset($_GET['send'])) {
     if (in_array($passwod, $formularios)) {
-        $ok = 'page.php';
+        $ok = 'cadastroPost.php';
     } else {
         $ok =  '';
     }

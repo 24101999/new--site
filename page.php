@@ -46,12 +46,49 @@ require_once './controller/controllerPage.php';
         </article>
     </header>
 
+    <h2 style="text-align: center;">Imagens cadastradas</h2>
     <article class="imgs">
-        <?php foreach ($imgs as $img) : ?>
-        <img src="/arquivos/<?= $img['img'] ?>" alt="">
+        <?php foreach ($imgs as $content) : ?>
+        <div class="elements">
+            <h2><?= $content['titulo'] ?></h2>
+            <img src="/arquivos/<?= $content['img'] ?>" alt="">
+        </div>
         <?php endforeach; ?>
     </article>
 
+    <article class="carrousel">
+
+    </article>
+
+    <footer class="page-footer">
+        <h2>Minhas redes de contato</h2>
+        <div class="infos-footer-page">
+            <a href="https://github.com/24101999" target="_blank">
+                <div class="infos-page">
+                    <img src="imagens/github-brands.svg" height="50px" alt="">
+                    <p>GitHub</p>
+                </div>
+            </a>
+            <div class="zap">
+                <a href="https://wa.me/5544997070974" target="_blank">
+                    <img src="imagens/whatsapp-brands.svg" height="50px" alt="">
+                    <p>WhatsApp</p>
+                </a>
+
+            </div>
+            <a href="https://www.linkedin.com/in/henrique-da-silva-costa-7172521a2/9" target="_blank">
+                <div class="infos-page">
+                    <img src="imagens/linkedin-brands.svg" height="50px" alt="">
+                    <p>Linkedin</p>
+                </div>
+            </a>
+        </div>
+    </footer>
+
+    <script text="javascript">
+    let img = '<?= json_encode($imgs) ?>'
+    let array = JSON.parse(img)
+    </script>
 
     <script src="script.js"></script>
 </body>

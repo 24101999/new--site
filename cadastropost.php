@@ -1,5 +1,4 @@
 <?php
-require_once './controller/conecsaobanco.php';
 require_once './controller/controllerCadastroPost.php';
 ?>
 
@@ -22,6 +21,7 @@ require_once './controller/controllerCadastroPost.php';
 <body class="body-cadastro">
     <article class="file">
         <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Titulo">
             <input class="input-file" type="file" name="file">
             <button type="submit" class="button-send" name="send">Enviar</button>
             <h3><?= $msg ?></h3>

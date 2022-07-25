@@ -50,7 +50,6 @@ a {
     width: 300px;
     background-color: #ffffff8c;
     border-radius: 5px;
-    padding: 0.5rem;
     &:hover {
         background-color: rgba(255, 255, 255, 0.815);
     }
@@ -62,6 +61,57 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+}
+
+.page-footer {
+    background-image: url(imagens/laptop-1478822_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5rem;
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 900;
+    }
+}
+
+.zap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+}
+
+.infos-footer-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: end;
+}
+
+.infos-page {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+}
+
+.elements {
+    display: flex;
+    flex-direction: column;
+    .text-elements {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 // .page-nav{
@@ -225,8 +275,35 @@ article {
 }
 
 .file {
+    input {
+        background: no-repeat;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: #fff;
+        outline: none;
+        &::placeholder {
+            color: #fff;
+        }
+    }
+    button {
+        background: no-repeat;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+    }
+    textarea {
+        background: no-repeat;
+        border: 2px solid;
+        border-radius: 5px;
+        outline: none;
+    }
     h3 {
         text-align: center;
+    }
+    &::placeholder {
+        color: #fff;
     }
 }
 
